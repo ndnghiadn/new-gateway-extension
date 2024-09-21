@@ -3,6 +3,7 @@ import { useStorage, withErrorBoundary, withSuspense } from '@extension/shared';
 import { exampleThemeStorage } from '@extension/storage';
 import type { ComponentPropsWithoutRef } from 'react';
 import { TestComponent } from './components/Test';
+import LoginForm from './pages/LoginPage/LoginForm';
 
 const notificationOptions = {
   type: 'basic',
@@ -16,17 +17,7 @@ const Popup = () => {
   const isLight = theme === 'light';
   const logo = isLight ? 'popup/logo_vertical.svg' : 'popup/logo_vertical_dark.svg';
 
-  return (
-    // <div className={`App ${isLight ? 'bg-slate-50' : 'bg-gray-800'}`}>
-    //   <header className={`App-header ${isLight ? 'text-gray-900' : 'text-gray-100'}`}>
-    //     Hello world!
-    //   </header>
-    // </div>
-    // <div className="w-full h-full bg-green-900">
-    //   <ToggleButton>Toggle theme</ToggleButton>
-    // </div>
-    <TestComponent />
-  );
+  return <LoginForm />;
 };
 
 const ToggleButton = (props: ComponentPropsWithoutRef<'button'>) => {
